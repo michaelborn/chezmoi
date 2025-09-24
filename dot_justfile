@@ -1,0 +1,17 @@
+default:
+    just --list
+
+setup-work: install-work-apps dark-mode
+
+install-work-apps:
+    sudo snap install pomotroid
+    sudo snap install postman
+    sudo snap install dbeaver-ce
+    sudo snap install zoom-client
+    sudo snap install code --classic
+
+dark-mode:
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+
+light-mode:
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
