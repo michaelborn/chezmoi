@@ -15,3 +15,9 @@ dark-mode:
 
 light-mode:
     gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
+
+install-gnome-extensions
+    sudo apt install gnome-browser-connector
+    # https://extensions.gnome.org/extension/1610/fullscreen-notifications/
+    # https://extensions.gnome.org/extension/1113/nothing-to-say/
+    # https://extensions.gnome.org/extension/7065/tiling-shell/ 
