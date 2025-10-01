@@ -1,0 +1,15 @@
+[user]
+	email = michael@ortussolutions.com
+	name = Michael Born
+[core]
+	editor = vim
+[init]
+	defaultBranch = main
+[alias]
+	lb = "for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(committerdate:relative)\t %(refname:short)'"
+[pull]
+	rebase = true
+
+mr = "push -o merge_request.create -o merge_request.remove_source_branch -o merge_request.target=development --set-upstream origin HEAD"
+[push]
+	autoSetupRemote = true
