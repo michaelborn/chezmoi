@@ -1,0 +1,12 @@
+# I give up. adapted from github.com/twpayne/dotfiles/blob/master/home/.chezmoi.toml.tmpl
+{{- $work := false -}}{{/* true if this machine is a work machine */}}
+{{- $personal := false -}}{{/* true if this machine is a personal machine */}}
+{{- $email := "michaeltheborn@protonmail.com" -}}
+{{- if $work -}}
+{{-     $email := "michael@ortussolutions.com" -}}
+{{- end -}}
+
+[data]
+    email = {{ $email }}
+    gitemail = {{ $email }}
+    work = {{ $work }}
