@@ -9,14 +9,23 @@ install-work-apps:
     sudo snap install dbeaver-ce
     sudo snap install zoom-client
     sudo snap install code --classic
+    sudo snap install ngrok
 
+# See https://dashboard.ngrok.com/get-started/your-authtoken
+# Add your ngrok auth token to local ngrok config
+authenticate-ngrok token:
+    ngrok config add-authtoken '{{token}}'
+
+# Set gnome dark mode
 dark-mode:
     gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 
+# Set gnome light mode
 light-mode:
     gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
 
-install-gnome-extensions
+# Common gnome extensions - Tiling shell, mic muter, fullscreen notifs
+install-gnome-extensions:
     sudo apt install gnome-browser-connector
     # https://extensions.gnome.org/extension/1610/fullscreen-notifications/
     # https://extensions.gnome.org/extension/1113/nothing-to-say/
