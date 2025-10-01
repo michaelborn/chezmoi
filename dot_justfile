@@ -16,6 +16,12 @@ install-work-apps:
 authenticate-ngrok token:
     ngrok config add-authtoken '{{token}}'
 
+# Install starship and optionally add to .bashrc
+install-starship:
+    curl -sS https://starship.rs/install.sh | sh
+    # Should be unnecessary as .bashrc is managed by chezmoi
+    # echo 'eval "$(starship init bash)"' >> ~/.bashrc
+
 # Set gnome dark mode
 dark-mode:
     gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
