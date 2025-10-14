@@ -1,15 +1,20 @@
 default:
     just --list
 
-setup-work: install-work-apps dark-mode
+setup-work: install-basics install-work-apps dark-mode install-starship
 
+# Curl, git, vim, etc.
+install-basics:
+    sudo apt install -y curl git vim
+
+# Work-specific apps like postman, zoom, dbeaver, ngrok, and NM VPN tooling
 install-work-apps:
-    sudo snap install pomotroid
-    sudo snap install postman
-    sudo snap install dbeaver-ce
-    sudo snap install zoom-client
-    sudo snap install code --classic
-    sudo snap install ngrok
+    sudo apt install flameshot network-manager-openconnect-gnome
+    sudo snap install pomotroid postman dbeaver-ce zoom-client ngrok chromium
+
+# Install common apps like chezmoi, code, starship, etc.
+install-apps:
+    sudo snap install chezmoi code --classic
 
 # See https://dashboard.ngrok.com/get-started/your-authtoken
 # Add your ngrok auth token to local ngrok config
