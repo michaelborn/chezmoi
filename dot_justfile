@@ -1,7 +1,9 @@
 default:
     just --list
 
-setup-work: install-basics install-work-apps dark-mode install-starship
+setup: install-basics install-apps dark-mode install-starship install-ulauncher
+
+setup-work: install-basics install-work-apps dark-mode install-starship install-ulauncher
 
 # Curl, git, vim, etc.
 install-basics:
@@ -54,3 +56,9 @@ install-prey $API_KEY PREY_VERSION:
 
 setup-prey PREY_SETUP_KEY:
     prey config account authorize -a {{ PREY_SETUP_KEY}}
+
+install-ulauncher:
+    sudo add-apt-repository universe -y
+    sudo add-apt-repository ppa:agornostal/ulauncher -y
+    sudo apt update
+    sudo apt install ulauncher
