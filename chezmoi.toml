@@ -10,3 +10,8 @@
     email = {{ $email }}
     gitemail = {{ $email }}
     work = {{ $work }}
+
+[git]
+    # autoAdd = true
+    autoCommit = true # add + commit
+    autoPush = true
