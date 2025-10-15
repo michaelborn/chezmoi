@@ -3,11 +3,13 @@ default:
 
 setup: install-basics install-apps dark-mode install-starship install-ulauncher
 
-setup-work: install-basics install-work-apps dark-mode install-starship install-ulauncher
+setup-work: && setup install-work-apps
+    echo "Running work-specific setup"
 
 # Curl, git, vim, etc.
 install-basics:
     sudo apt install -y curl git vim
+    sudo apt install wmctrl # Wayland hotkey fix - https://github.com/Ulauncher/Ulauncher/wiki/Hotkey-In-Wayland
 
 # Work-specific apps like postman, zoom, dbeaver, ngrok, and NM VPN tooling
 install-work-apps:
@@ -16,7 +18,9 @@ install-work-apps:
 
 # Install common apps like chezmoi, code, starship, etc.
 install-apps:
-    sudo snap install chezmoi code --classic
+    sudo snap install chezmoi --classic
+    sudo snap install code --classic
+    sudo snap install docker
 
 # See https://dashboard.ngrok.com/get-started/your-authtoken
 # Add your ngrok auth token to local ngrok config
@@ -62,3 +66,17 @@ install-ulauncher:
     sudo add-apt-repository ppa:agornostal/ulauncher -y
     sudo apt update
     sudo apt install ulauncher
+
+# Flatpak, for installing Waterfox and Zen browser
+install-flatpak:
+    sudo apt install flatpak
+    sudo apt install gnome-software-plugin-flatpak
+    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+# Waterfox browser
+install-waterfox:
+    flatpak install flathub net.waterfox.waterfox
+
+# Zen browser
+install-zen:
+    flatpak install flathub app.zen_browser.zen
