@@ -10,7 +10,7 @@ install-basics:
 # Work-specific apps like postman, zoom, dbeaver, ngrok, and NM VPN tooling
 install-work-apps:
     sudo apt install flameshot network-manager-openconnect-gnome
-    sudo snap install pomotroid postman dbeaver-ce zoom-client ngrok chromium
+    sudo snap install slack pomotroid postman dbeaver-ce zoom-client ngrok chromium
 
 # Install common apps like chezmoi, code, starship, etc.
 install-apps:
@@ -41,3 +41,16 @@ install-gnome-extensions:
     # https://extensions.gnome.org/extension/1610/fullscreen-notifications/
     # https://extensions.gnome.org/extension/1113/nothing-to-say/
     # https://extensions.gnome.org/extension/7065/tiling-shell/ 
+
+# https://help.preyproject.com/article/317-unattended-install-ubuntu
+# Ortus Prey inventory tracker
+install-prey $API_KEY PREY_VERSION:
+    echo $API_KEY
+    curl https://downloads.preyproject.com/prey-client-releases/node-client/{{ PREY_VERSION }}/prey_{{ PREY_VERSION }}_amd64.deb --output Downloads/prey_{{ PREY_VERSION }}_amd64.deb
+    sudo apt install libgtk-3-dev scrot streamer mpg123
+    # sudo apt --fix-broken install
+    # sudo apt-get -f install
+    sudo -E dpkg -i Downloads/prey_{{ PREY_VERSION }}_amd64.deb
+
+setup-prey PREY_SETUP_KEY:
+    prey config account authorize -a {{ PREY_SETUP_KEY}}
