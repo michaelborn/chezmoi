@@ -5,11 +5,14 @@ setup: install-basics install-apps dark-mode install-starship install-ulauncher
 
 setup-work: && setup install-work-apps
     echo "Running work-specific setup"
+    just install-commandbox
+    just install-java
 
 # Curl, git, vim, etc.
 install-basics:
     sudo apt install -y curl git vim
     sudo apt install wmctrl # Wayland hotkey fix - https://github.com/Ulauncher/Ulauncher/wiki/Hotkey-In-Wayland
+    sudo apt install ddcutil # display brightness control util
 
 # Work-specific apps like postman, zoom, dbeaver, ngrok, and NM VPN tooling
 install-work-apps:
@@ -80,3 +83,14 @@ install-waterfox:
 # Zen browser
 install-zen:
     flatpak install flathub app.zen_browser.zen
+
+# Install CommandBox
+install-commandbox:
+    mkdir -p ~/bin
+    wget https://www.ortussolutions.com/parent/download/commandbox/type/linux-jre64 -O ~/bin/box.zip
+    unzip ~/bin/box.zip -d ~/bin
+    rm ~/bin/box.zip
+
+# Install java
+install-java:
+   sudo apt install openjdk-21-jdk
