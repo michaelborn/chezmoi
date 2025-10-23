@@ -23,7 +23,7 @@ install-work-apps:
 install-apps:
     sudo snap install chezmoi --classic
     sudo snap install code --classic
-    sudo snap install docker
+    just install-docker
 
 # See https://dashboard.ngrok.com/get-started/your-authtoken
 # Add your ngrok auth token to local ngrok config
@@ -94,3 +94,9 @@ install-commandbox:
 # Install java
 install-java:
    sudo apt install openjdk-21-jdk
+
+install-docker:
+    sudo snap install docker
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+    newgrp docker
