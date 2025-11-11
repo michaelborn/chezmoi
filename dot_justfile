@@ -18,6 +18,7 @@ install-basics:
 install-work-apps:
     sudo apt install flameshot network-manager-openconnect-gnome
     sudo snap install slack pomotroid postman dbeaver-ce zoom-client ngrok chromium
+    just install-pipewire
 
 # Install common apps like chezmoi, code, starship, etc.
 install-apps:
@@ -100,3 +101,8 @@ install-docker:
     sudo groupadd docker
     sudo usermod -aG docker $USER
     newgrp docker
+
+# https://www.baeldung.com/linux/pulseaudio-pipewire-replace
+# Pipewire and pipewire utils necessary for fixing zoom screen capture in Wayland/Gnome 49.
+install-pipewire:
+    sudo apt install -y pipewire pipewire-audio-client-libraries pulseaudio-utils
