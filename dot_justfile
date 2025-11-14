@@ -1,7 +1,7 @@
 default:
     just --list
 
-setup: install-basics install-apps dark-mode install-starship install-ulauncher
+setup: install-basics install-apps dark-mode install-starship install-ulauncher install-librewolf
 
 setup-work: && setup install-work-apps
     echo "Running work-specific setup"
@@ -84,6 +84,12 @@ install-waterfox:
 # Zen browser
 install-zen:
     flatpak install flathub app.zen_browser.zen
+
+# Librewolf browser
+install-librewolf:
+    sudo apt update && sudo apt install extrepo -y
+    sudo extrepo enable librewolf
+    sudo apt update && sudo apt install librewolf -y
 
 # Install CommandBox
 install-commandbox:
