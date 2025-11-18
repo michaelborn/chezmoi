@@ -7,6 +7,7 @@ setup-work: && setup install-work-apps
     echo "Running work-specific setup"
     just install-commandbox
     just install-java
+    just install-nordlayer
 
 # Curl, git, vim, etc.
 install-basics:
@@ -112,3 +113,7 @@ install-docker:
 # Pipewire and pipewire utils necessary for fixing zoom screen capture in Wayland/Gnome 49.
 install-pipewire:
     sudo apt install -y pipewire pipewire-audio-client-libraries pulseaudio-utils
+
+install-nordlayer:
+  curl https://downloads.nordlayer.com/linux/latest/debian/latest/nordlayer_latest_amd64.deb --output ~/Downloads/nordlayer_latest_amd64.deb
+  sudo dpkg -i ~/Downloads/nordlayer_latest_amd64.deb
