@@ -120,10 +120,14 @@ install-nordlayer:
 
 # Disable screen lock and notifications
 meeting-start:
+  echo "Disabling lock screen"
   gsettings set org.gnome.desktop.lockdown disable-lock-screen true
+  echo "Enabling Do-Not-Disturb"
   gsettings set org.gnome.desktop.notifications show-banners false
 
 # Re-enable screen lock and notifications
 meeting-end:
+  echo "Re-enabling lock screen"
   gsettings set org.gnome.desktop.lockdown disable-lock-screen false
+  echo "Disabling Do-Not-Disturb"
   gsettings set org.gnome.desktop.notifications show-banners true
