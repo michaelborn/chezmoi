@@ -117,3 +117,13 @@ install-pipewire:
 install-nordlayer:
   curl https://downloads.nordlayer.com/linux/latest/debian/latest/nordlayer_latest_amd64.deb --output ~/Downloads/nordlayer_latest_amd64.deb
   sudo dpkg -i ~/Downloads/nordlayer_latest_amd64.deb
+
+# Disable screen lock and notifications
+meeting-start:
+  gsettings set org.gnome.desktop.lockdown disable-lock-screen true
+  gsettings set org.gnome.desktop.notifications show-banners false
+
+# Re-enable screen lock and notifications
+meeting-end:
+  gsettings set org.gnome.desktop.lockdown disable-lock-screen false
+  gsettings set org.gnome.desktop.notifications show-banners true

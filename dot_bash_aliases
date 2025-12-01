@@ -29,3 +29,9 @@ alias screenDim='ddcutil setvcp 10 10 --display 1'
 alias screen50='ddcutil setvcp 10 50 --display 1'
 alias screen75='ddcutil setvcp 10 75 --display 1'
 
+# NPM aliases for security reasons
+# Cite: https://github.com/ashishb/dotfiles/blob/067de6f90c72f0cf849fb6edcd941b347712ced9/bashrc_includes/custom_aliases.bash#L19-L21
+alias npm='docker run --rm -it -v "${PWD}":"${PWD}" --net=host --workdir=${PWD} node:25-bookworm-slim npm'
+alias npx='docker run --rm -v "${PWD}":"${PWD}" --net=host --workdir=${PWD} node:25-bookworm-slim npx'
+alias yarn='docker run --rm -it -v "${PWD}":"${PWD}" --net=host --workdir=${PWD} node:25-bookworm-slim yarn'
+
