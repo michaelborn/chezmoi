@@ -136,3 +136,9 @@ meeting-end:
 install-tailwindcss:
   #curl https://github.com/tailwindlabs/tailwindcss/releases/download/v4.1.18/tailwindcss-linux-x64 --output ~/bin/tailwindcss-linux-x64
   #sudo chmod +x ~/bin/tailwindcss-linux-x64
+
+install-ghostty:
+  snap install ghostty --classic
+
+install-opencode:
+  curl -fsSL https://opencode.ai/install | bash
