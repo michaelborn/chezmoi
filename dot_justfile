@@ -131,3 +131,8 @@ meeting-end:
   gsettings set org.gnome.desktop.lockdown disable-lock-screen false
   echo "Disabling Do-Not-Disturb"
   gsettings set org.gnome.desktop.notifications show-banners true
+
+# FAILs to download, likely a github download restriction for scripts.
+install-tailwindcss:
+  #curl https://github.com/tailwindlabs/tailwindcss/releases/download/v4.1.18/tailwindcss-linux-x64 --output ~/bin/tailwindcss-linux-x64
+  #sudo chmod +x ~/bin/tailwindcss-linux-x64

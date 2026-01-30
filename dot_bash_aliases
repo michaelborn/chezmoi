@@ -35,3 +35,5 @@ alias npm='docker run --rm -it -v "${PWD}":"${PWD}" --net=host --workdir=${PWD} 
 alias npx='docker run --rm -v "${PWD}":"${PWD}" --net=host --workdir=${PWD} node:25-bookworm-slim npx'
 alias yarn='docker run --rm -it -v "${PWD}":"${PWD}" --net=host --workdir=${PWD} node:25-bookworm-slim yarn'
 
+# Tailwind and other npm utils
+alias tailwindcss='tailwindcss-linux-x64'
