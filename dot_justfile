@@ -144,7 +144,7 @@ install-opencode:
   curl -fsSL https://opencode.ai/install | bash
 
 screen-dim:
-  screenDim
+  ddcutil setvcp 10 10 --display 1
 
 screen-bright:
-  screenBright
+  ddcutil setvcp 10 100 --display 1
