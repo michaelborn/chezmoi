@@ -142,3 +142,9 @@ install-ghostty:
 
 install-opencode:
   curl -fsSL https://opencode.ai/install | bash
+
+screen-dim:
+  screenDim
+
+screen-bright:
+  screenBright

@@ -1,5 +1,7 @@
 # Work only
 alias prey="/usr/lib/prey/current/bin/prey"
+# Requires Rust, Cargo, and eza installed
+#alias ll="eza -la";
 
 # Random Aliases
 alias ll="ls -la";
