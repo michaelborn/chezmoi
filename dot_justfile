@@ -139,6 +139,7 @@ install-tailwindcss:
 
 install-ghostty:
   snap install ghostty --classic
+  gsettings set org.gnome.desktop.default-applications.terminal exec 'ghostty'
 
 install-opencode:
   curl -fsSL https://opencode.ai/install | bash
