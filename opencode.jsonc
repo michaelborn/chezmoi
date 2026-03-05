@@ -1,0 +1,25 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "hyper": {
+      "type": "remote",
+      "url": "https://hyper.ortusbooks.com/~gitbook/mcp",
+      "enabled": true
+    },
+    "coldbox": {
+      "type": "remote",
+      "url": "https://coldbox.ortusbooks.com/~gitbook/mcp",
+      "enabled": true
+    },
+    "boxlang": {
+      "type": "remote",
+      "url": "https://boxlang.ortusbooks.com/~gitbook/mcp",
+      "enabled": false
+    },
+    "qb": {
+      "type": "remote",
+      "url": "https://qb.ortusbooks.com/~gitbook/mcp",
+      "enabled": true
+    }
+  }
+}
