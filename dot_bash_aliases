@@ -41,4 +41,3 @@ alias yarn='docker run --rm -it -v "${PWD}":"${PWD}" --net=host --workdir=${PWD}
 alias tailwindcss='tailwindcss-linux-x64'
 
 # Ghostty and TUI programs
-alias top="procs --sortd CPU"
