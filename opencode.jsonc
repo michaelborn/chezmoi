@@ -27,7 +27,7 @@
       "enabled": true,
       "environment": {
         "ELASTICSEARCH_HOSTS": "http://ais-elasticsearch.revagency.net:9200",
-        "ELASTICSEARCH_API_KEY": "zgd-1OizRfGzUuUAfIJwkw",
+        "ELASTICSEARCH_API_KEY": "X1NvdDJKd0JoMUx0Rm16V2IxbTU6WTVlVkNLX09RRi1WNkFiM2JoXzRoQQ==",
         "DISABLE_HIGH_RISK_OPERATIONS": "true"
       }
     }
