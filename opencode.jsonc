@@ -20,6 +20,16 @@
       "type": "remote",
       "url": "https://qb.ortusbooks.com/~gitbook/mcp",
       "enabled": true
+    },
+    "elasticsearch": {
+      "type": "local",
+      "command": ["uvx", "elasticsearch-mcp-server"],
+      "enabled": true,
+      "environment": {
+        "ELASTICSEARCH_HOSTS": "http://ais-elasticsearch.revagency.net:9200",
+        "ELASTICSEARCH_API_KEY": "zgd-1OizRfGzUuUAfIJwkw",
+        "DISABLE_HIGH_RISK_OPERATIONS": "true"
+      }
     }
   }
 }
