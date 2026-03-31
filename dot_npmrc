@@ -1,0 +1,4 @@
+# Security settings
+# https://news.ycombinator.com/item?id=47582632
+min-release-age=7 # days
+ignore-scripts=true
